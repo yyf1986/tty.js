@@ -85,17 +85,17 @@ tty.open = function() {
       new Window;
     });
   }
-
+  new Window;
   if (lights) {
     on(lights, 'click', function() {
       tty.toggleLights();
     });
   }
 
-  tty.socket.on('connect', function() {
-    tty.reset();
-    tty.emit('connect');
-  });
+//  tty.socket.on('connect', function() {
+//    tty.reset();
+//    tty.emit('connect');
+//  });
 
   tty.socket.on('data', function(id, data) {
     if (!tty.terms[id]) return;
